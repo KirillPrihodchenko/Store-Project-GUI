@@ -1,23 +1,23 @@
 package UserInterface;
 
-import StoreLogic.Category;
 
+import StoreLogic.Category;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class WindowLogin implements ActionListener{
+public class WindowLogin implements ActionListener {
 
 
-    private static final JFrame frame = new JFrame("Store 'Beerlander'");
-    private static JPanel panel = new JPanel();
+    private static final JFrame frame = new JFrame("Grocery Store");
+    private static final JPanel panel = new JPanel();
     private static JTextField TextFieldForALogin, TextFieldForAPassword;
     private static JLabel LabelBoxForAName, LabelBoxForAPassword;
     private static JButton ButtonForEntranceInStore, ButtonForClearEnterData;
 
-    public void LoginWindow() {
+    public WindowLogin() {
 
         panel.setPreferredSize(new Dimension(280, 150));
 
@@ -34,6 +34,11 @@ public class WindowLogin implements ActionListener{
         TextFieldForALogin.setBounds(90, 20, 150, 30);
         TextFieldForAPassword = new JTextField();
         TextFieldForAPassword.setBounds(90, 65, 150, 30);
+
+        if (TextFieldForALogin == null && TextFieldForAPassword == null) {
+
+            throw new NullPointerException();
+        }
 
         ButtonForEntranceInStore = new JButton("Log In");
         ButtonForEntranceInStore.addActionListener(this);
@@ -56,8 +61,7 @@ public class WindowLogin implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == ButtonForEntranceInStore) {
-            WindowStore windowStore = new WindowStore();
-            windowStore.PushWindow();
+            new WindowStore();
         }
     }
 }

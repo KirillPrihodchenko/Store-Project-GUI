@@ -2,8 +2,7 @@ package StoreLogic;
 
 import java.util.List;
 
-public class Basket {
-
-    private List<String> SaleProduct;
+public class Basket extends Category{
+    public Basket() { }
 
 }
