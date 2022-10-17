@@ -6,13 +6,12 @@ public class Category {
 
     private String name;
     private List<String> product;
-
+    private Map<String, String> catalog;
     public Category() { }
 
-//---------------- Catalogs --------------------//
     public String GroceryList() {
 
-        Map<String, String> catalog = new HashMap<>();
+        catalog = new HashMap<>();
         catalog.put("Vegetables", "Vegetables");
         catalog.put("Meals", "Meals");
         catalog.put("Cheeses", "Cheeses");
@@ -20,7 +19,7 @@ public class Category {
 
         switch (catalog.get("Fish")) {
 
-            case "Vegetables":
+            case "Vegetables" -> {
                 product = new ArrayList<>();
                 product.add("Potato");
                 product.add("Tomato");
@@ -28,9 +27,10 @@ public class Category {
                 product.add("Onion");
                 product.add("Carrot");
                 product.add("Cabbage");
-                System.out.println(product);
+                return String.valueOf(product);
+            }
 
-            case "Meals":
+            case "Meals" -> {
                 product = new ArrayList<>();
                 product.add("Beef");
                 product.add("Pork");
@@ -38,9 +38,10 @@ public class Category {
                 product.add("Mutton");
                 product.add("Turkey");
                 product.add("Chicken");
-                System.out.println(product);
+                return String.valueOf(product);
+            }
 
-            case "Cheeses":
+            case "Cheeses" -> {
                 product = new ArrayList<>();
                 product.add("Cheddar");
                 product.add("Danish Blue");
@@ -48,9 +49,10 @@ public class Category {
                 product.add("Cream");
                 product.add("Brie");
                 product.add("Cottage");
-                System.out.println(product);
+                return String.valueOf(product);
+            }
 
-            case "Fish":
+            case "Fish" -> {
                 product = new ArrayList<>();
                 product.add("Salmon");
                 product.add("Tuna");
@@ -58,7 +60,8 @@ public class Category {
                 product.add("Sardines");
                 product.add("Herring");
                 product.add("Perch");
-                System.out.println(product);
+                return String.valueOf(product);
+            }
         }
         return null;
     }

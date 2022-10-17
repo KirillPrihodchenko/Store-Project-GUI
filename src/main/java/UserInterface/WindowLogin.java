@@ -1,23 +1,23 @@
 package UserInterface;
 
 
-import StoreLogic.Category;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 
-public class WindowLogin implements ActionListener {
-
+public class WindowLogin extends DataForLogin implements ActionListener {
 
     private static final JFrame frame = new JFrame("Grocery Store");
     private static final JPanel panel = new JPanel();
-    private static JTextField TextFieldForALogin, TextFieldForAPassword;
+    private static JTextField TextFieldForALogin;
+    private static JPasswordField TextFieldForAPassword;
     private static JLabel LabelBoxForAName, LabelBoxForAPassword;
     private static JButton ButtonForEntranceInStore, ButtonForClearEnterData;
 
-    public WindowLogin() {
+    public WindowLogin(HashMap<String, String> loginInfo) {
 
         panel.setPreferredSize(new Dimension(280, 150));
 
@@ -32,8 +32,9 @@ public class WindowLogin implements ActionListener {
 
         TextFieldForALogin = new JTextField();
         TextFieldForALogin.setBounds(90, 20, 150, 30);
-        TextFieldForAPassword = new JTextField();
+        TextFieldForAPassword = new JPasswordField();
         TextFieldForAPassword.setBounds(90, 65, 150, 30);
+
 
         if (TextFieldForALogin == null && TextFieldForAPassword == null) {
 
@@ -42,7 +43,10 @@ public class WindowLogin implements ActionListener {
 
         ButtonForEntranceInStore = new JButton("Log In");
         ButtonForEntranceInStore.addActionListener(this);
+        ButtonForEntranceInStore.setFocusable(false);
         ButtonForClearEnterData = new JButton("Clear");
+        ButtonForClearEnterData.addActionListener(this);
+        ButtonForClearEnterData.setFocusable(false);
 
         frame.add(TextFieldForALogin);
         frame.add(TextFieldForAPassword);
@@ -60,8 +64,20 @@ public class WindowLogin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if (e.getSource() == ButtonForClearEnterData) {
+            TextFieldForALogin.setText("");
+            TextFieldForAPassword.setText("");
+        }
         if (e.getSource() == ButtonForEntranceInStore) {
-            new WindowStore();
+
+            String name = TextFieldForALogin.getText();
+            String password = String.valueOf(TextFieldForAPassword.getPassword());
+
+            if (getLoginInfo().containsKey(name)) {
+                if (getLoginInfo().get(name).equals(password)) {
+                    new WindowStore();
+                }
+            }
         }
     }
 }
