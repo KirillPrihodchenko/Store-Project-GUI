@@ -36,7 +36,7 @@ public class WindowLogin extends DataForLogin implements ActionListener {
         TextFieldForAPassword.setBounds(90, 65, 150, 30);
 
 
-        if (TextFieldForALogin == null && TextFieldForAPassword == null) {
+        if ((TextFieldForALogin == null) || (TextFieldForAPassword == null)) {
 
             throw new NullPointerException();
         }
@@ -74,7 +74,7 @@ public class WindowLogin extends DataForLogin implements ActionListener {
             String password = String.valueOf(TextFieldForAPassword.getPassword());
 
             if (getLoginInfo().containsKey(name)) {
-                if (getLoginInfo().get(name).equals(password)) {
+                if (getLoginInfo().get(name).equals(password)) {    // select name and pass from "DataForLogin"
                     new WindowStore();
                 }
             }

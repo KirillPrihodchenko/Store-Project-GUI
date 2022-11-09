@@ -4,26 +4,37 @@ import StoreLogic.Category;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Collections;
-import java.util.Vector;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class WindowStore extends Category {
 
-    private static final JFrame frame = new JFrame("Inner store");
-    private static final JPanel panel = new JPanel();
-    private static Category category = new Category();
+public class WindowStore extends Category implements ActionListener {
+
+     private static final JFrame frame = new JFrame("Inner store");
+     private static final JPanel panel = new JPanel();
+
     public WindowStore() {
 
         panel.setPreferredSize(new Dimension(800, 700));
 
+        JList<String> enumeration = new JList<>(Category.product.toArray(getFishProducts()));
+        enumeration.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-       JList<String> enumeration = new JList<>(Collections.singletonList(category.GroceryList()));
-       enumeration.setLocation(780, 350);
+        JButton okClick = new JButton("OK");
+        okClick.setLocation(900, 350);
+        okClick.addActionListener(this);
+
 
         frame.add(panel);
         panel.add(enumeration);
+        panel.add(okClick);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

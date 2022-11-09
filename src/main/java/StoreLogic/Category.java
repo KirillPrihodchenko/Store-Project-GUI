@@ -4,65 +4,62 @@ import java.util.*;
 
 public class Category {
 
-    private String name;
-    private List<String> product;
-    private Map<String, String> catalog;
-    public Category() { }
+    protected static List<String> product = new ArrayList<>();
+    //private static final Map<String, String[]> catalog = new HashMap<>();
 
-    public String GroceryList() {
+    public Category() {
 
-        catalog = new HashMap<>();
-        catalog.put("Vegetables", "Vegetables");
-        catalog.put("Meals", "Meals");
-        catalog.put("Cheeses", "Cheeses");
-        catalog.put("Fish", "Fish");
+//        catalog.put("Vegetables", category.getVegetableProducts());
+//        catalog.put("Meats", category.getMeatProducts());
+//        catalog.put("Cheeses", category.getCheeseProducts());
+//        catalog.put("Fish", category.getFishProducts());
+    }
 
-        switch (catalog.get("Fish")) {
+    public String[] getVegetableProducts() {
 
-            case "Vegetables" -> {
-                product = new ArrayList<>();
-                product.add("Potato");
-                product.add("Tomato");
-                product.add("Garlic");
-                product.add("Onion");
-                product.add("Carrot");
-                product.add("Cabbage");
-                return String.valueOf(product);
-            }
+        product.add("Potato");
+        product.add("Tomato");
+        product.add("Garlic");
+        product.add("Onion");
+        product.add("Carrot");
+        product.add("Cabbage");
 
-            case "Meals" -> {
-                product = new ArrayList<>();
-                product.add("Beef");
-                product.add("Pork");
-                product.add("Veal");
-                product.add("Mutton");
-                product.add("Turkey");
-                product.add("Chicken");
-                return String.valueOf(product);
-            }
+        return new String[product.size()];
+    }
 
-            case "Cheeses" -> {
-                product = new ArrayList<>();
-                product.add("Cheddar");
-                product.add("Danish Blue");
-                product.add("Mozzarella");
-                product.add("Cream");
-                product.add("Brie");
-                product.add("Cottage");
-                return String.valueOf(product);
-            }
+    public String[] getMeatProducts() {
 
-            case "Fish" -> {
-                product = new ArrayList<>();
-                product.add("Salmon");
-                product.add("Tuna");
-                product.add("Mackerel");
-                product.add("Sardines");
-                product.add("Herring");
-                product.add("Perch");
-                return String.valueOf(product);
-            }
-        }
-        return null;
+        product.add("Beef");
+        product.add("Pork");
+        product.add("Veal");
+        product.add("Mutton");
+        product.add("Turkey");
+        product.add("Chicken");
+
+        return new String[product.size()];
+    }
+
+    public String[] getCheeseProducts() {
+
+        product.add("Cheddar");
+        product.add("Danish Blue");
+        product.add("Mozzarella");
+        product.add("Cream");
+        product.add("Brie");
+        product.add("Cottage");
+
+        return new String[product.size()];
+    }
+
+    public String[] getFishProducts() {
+
+        product.add("Salmon");
+        product.add("Tuna");
+        product.add("Mackerel");
+        product.add("Sardines");
+        product.add("Herring");
+        product.add("Perch");
+
+        return new String[product.size()];
     }
 }
