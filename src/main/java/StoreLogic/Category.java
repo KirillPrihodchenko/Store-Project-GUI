@@ -1,65 +1,62 @@
 package StoreLogic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Category {
 
-    protected static List<String> product = new ArrayList<>();
-    //private static final Map<String, String[]> catalog = new HashMap<>();
+    protected static List<String> vegetables = new ArrayList<>();
+    protected static List<String> meats =      new ArrayList<>();
+    protected static List<String> cheeses =    new ArrayList<>();
+    protected static List<String> fish =       new ArrayList<>();
 
-    public Category() {
-
-//        catalog.put("Vegetables", category.getVegetableProducts());
-//        catalog.put("Meats", category.getMeatProducts());
-//        catalog.put("Cheeses", category.getCheeseProducts());
-//        catalog.put("Fish", category.getFishProducts());
-    }
+    public Category() { }
 
     public String[] getVegetableProducts() {
 
-        product.add("Potato");
-        product.add("Tomato");
-        product.add("Garlic");
-        product.add("Onion");
-        product.add("Carrot");
-        product.add("Cabbage");
+        vegetables.add("Potato");
+        vegetables.add("Tomato");
+        vegetables.add("Garlic");
+        vegetables.add("Onion");
+        vegetables.add("Carrot");
+        vegetables.add("Cabbage");
 
-        return new String[product.size()];
+        return vegetables.toArray(new String[0]);
     }
 
     public String[] getMeatProducts() {
 
-        product.add("Beef");
-        product.add("Pork");
-        product.add("Veal");
-        product.add("Mutton");
-        product.add("Turkey");
-        product.add("Chicken");
+        meats.add("Beef");
+        meats.add("Pork");
+        meats.add("Veal");
+        meats.add("Mutton");
+        meats.add("Turkey");
+        meats.add("Chicken");
 
-        return new String[product.size()];
+        return meats.toArray(new String[0]);
     }
 
     public String[] getCheeseProducts() {
 
-        product.add("Cheddar");
-        product.add("Danish Blue");
-        product.add("Mozzarella");
-        product.add("Cream");
-        product.add("Brie");
-        product.add("Cottage");
+        cheeses.add("Cheddar");
+        cheeses.add("Danish Blue");
+        cheeses.add("Mozzarella");
+        cheeses.add("Cream");
+        cheeses.add("Brie");
+        cheeses.add("Cottage");
 
-        return new String[product.size()];
+        return cheeses.toArray(new String[0]);
     }
 
     public String[] getFishProducts() {
 
-        product.add("Salmon");
-        product.add("Tuna");
-        product.add("Mackerel");
-        product.add("Sardines");
-        product.add("Herring");
-        product.add("Perch");
+        fish.add("Salmon");
+        fish.add("Tuna");
+        fish.add("Mackerel");
+        fish.add("Sardines");
+        fish.add("Herring");
+        fish.add("Perch");
 
-        return new String[product.size()];
+        return fish.toArray(new String[0]);
     }
 }

@@ -9,5 +9,6 @@ public class Main {
 
         DataForLogin dataForLogin = new DataForLogin();
         new WindowLogin(dataForLogin.getLoginInfo());
+
     }
 }
