@@ -21,9 +21,7 @@ public class Category {
         vegetables.put(15.2, "Pepper");
         vegetables.put(8.3, "Garlic");
 
-        String[] vegetable = vegetables.values().toArray(new String[0]);
-
-        return vegetable;
+        return vegetables.values().toArray(new String[0]);
     }
 
     public String[] getMeatProducts() {
@@ -33,9 +31,7 @@ public class Category {
         meats.put(35.0, "Turkey");
         meats.put(34.6, "Horsemeat");
 
-        String[] meat = meats.values().toArray(new String[0]);
-
-       return meat;
+        return meats.values().toArray(new String[0]);
     }
 
     public String[] getCheeseProducts() {
@@ -47,9 +43,7 @@ public class Category {
         cheeses.put(31.2, "Brie");
         cheeses.put(29.9, "Cottage");
 
-        String[] cheese = cheeses.values().toArray(new String[0]);
-
-        return cheese;
+        return cheeses.values().toArray(new String[0]);
     }
 
     public String[] getFishProducts() {
@@ -61,8 +55,6 @@ public class Category {
         fish.put(31.2, "Herring");
         fish.put(32.9, "Perch");
 
-        String[] fsh = fish.values().toArray(new String[0]);
-
-        return fsh;
+        return fish.values().toArray(new String[0]);
     }
 }
