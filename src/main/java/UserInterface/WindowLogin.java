@@ -1,8 +1,14 @@
 package UserInterface;
 
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -68,13 +74,15 @@ public class WindowLogin extends DataForLogin implements ActionListener {
             TextFieldForALogin.setText("");
             TextFieldForAPassword.setText("");
         }
+
+    // select login and password from class "DataForLogin"
         if (e.getSource() == ButtonForEntranceInStore) {
 
             String name = TextFieldForALogin.getText();
             String password = String.valueOf(TextFieldForAPassword.getPassword());
 
             if (getLoginInfo().containsKey(name)) {
-                if (getLoginInfo().get(name).equals(password)) {    // select name and pass from "DataForLogin"
+                if (getLoginInfo().get(name).equals(password)) {
                     new WindowStore();
                 }
             }
