@@ -12,7 +12,7 @@ public class Category {
 
     public Category() { }
 
-    public String[] getVegetableProducts() {
+    static {
 
         vegetables.put("10.0", "Onion");
         vegetables.put("17.9", "Cabbage");
@@ -21,20 +21,10 @@ public class Category {
         vegetables.put("15.2", "Pepper");
         vegetables.put("8.3", "Garlic");
 
-        return vegetables.values().toArray(new String[0]);
-    }
-
-    public String[] getMeatProducts() {
-
         meats.put("32.1", "Pork");
         meats.put("29.9", "Beef");
         meats.put("35.0", "Turkey");
         meats.put("34.6", "Horsemeat");
-
-        return meats.values().toArray(new String[0]);
-    }
-
-    public String[] getCheeseProducts() {
 
         cheeses.put("22.4", "Cheddar");
         cheeses.put("25.3", "Danish Blue");
@@ -43,11 +33,6 @@ public class Category {
         cheeses.put("31.2", "Brie");
         cheeses.put("29.9", "Cottage");
 
-        return cheeses.values().toArray(new String[0]);
-    }
-
-    public String[] getFishProducts() {
-
         fish.put("29.4", "Salmon");
         fish.put("36.0", "Tuna");
         fish.put("21.5", "Mackerel");
@@ -55,6 +40,26 @@ public class Category {
         fish.put("31.2", "Herring");
         fish.put("32.9", "Perch");
 
+    }
+
+    public static String[] getVegetableProducts() {
+
+        return vegetables.values().toArray(new String[0]);
+    }
+
+    public static String[] getMeatProducts() {
+
+        return meats.values().toArray(new String[0]);
+    }
+
+    public static String[] getCheeseProducts() {
+
+        return cheeses.values().toArray(new String[0]);
+    }
+
+    public static String[] getFishProducts() {
+
         return fish.values().toArray(new String[0]);
     }
+
 }
